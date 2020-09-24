@@ -20,17 +20,17 @@ export interface MarkerProps {
 export interface LabelProps {
     oneMarkerValue: string | number;
     twoMarkerValue: string | number;
-    minValue: number;
-    maxValue: number;
     oneMarkerLeftPosition: number;
     twoMarkerLeftPosition: number;
     oneMarkerPressed: boolean;
     twoMarkerPressed: boolean;
+    toFixedNumber: string | number;
 }
 
 export interface MultiSliderProps {
     values?: number[];
-
+    toFixedNumber: string | numnber;
+    labelPrefix: string;
     onValuesChange?: (values: number[]) => void;
     onValuesChangeStart?: () => void;
     onValuesChangeFinish?: (values: number[]) => void;
@@ -74,7 +74,6 @@ export interface MultiSliderProps {
     markerOffsetX?: number;
     markerOffsetY?: number;
     minMarkerOverlapDistance?: number;
-    minMarkerOverlapStepDistance?: number;
     imageBackgroundSource?: string;
     enableLabel?: boolean;
     vertical?: boolean;
