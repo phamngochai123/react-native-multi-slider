@@ -7,6 +7,7 @@ const sliderRadius = 3;
 const width = 50;
 export default class DefaultLabel extends React.Component {
   static propTypes = {
+
     oneMarkerValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     twoMarkerValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
@@ -17,6 +18,7 @@ export default class DefaultLabel extends React.Component {
     twoMarkerPressed: PropTypes.bool,
   };
 
+
   render() {
     const {
       oneMarkerValue,
@@ -25,6 +27,7 @@ export default class DefaultLabel extends React.Component {
       twoMarkerLeftPosition,
       oneMarkerPressed,
       twoMarkerPressed,
+      labelPrefix
     } = this.props;
 
     return (
@@ -38,7 +41,7 @@ export default class DefaultLabel extends React.Component {
                 oneMarkerPressed && styles.markerPressed,
               ]}
             >
-              <Text style={styles.sliderLabelText}>{oneMarkerValue}</Text>
+              <Text style={styles.sliderLabelText}>{labelPrefix + oneMarkerValue}</Text>
             </View>
           )}
 
@@ -51,7 +54,7 @@ export default class DefaultLabel extends React.Component {
                 twoMarkerPressed && styles.markerPressed,
               ]}
             >
-              <Text style={styles.sliderLabelText}>{twoMarkerValue}</Text>
+              <Text style={styles.sliderLabelText}>{labelPrefix + twoMarkerValue}</Text>
             </View>
           )}
       </View>
